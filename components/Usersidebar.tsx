@@ -23,7 +23,7 @@ const Usersidebar = () => {
   return (
     <div className="flex gap-6">
       <div
-        className={`bg-black min-h-screen ${
+        className={`bg-gray-600 min-h-screen ${
           open ? "w-72" : "w-16"
         } duration-500 text-gray-100 px-4`}
       >

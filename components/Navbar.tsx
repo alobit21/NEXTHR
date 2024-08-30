@@ -3,47 +3,47 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { ChevronDownIcon, Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
-const navListMenuItems = [
-  { title: "Products", description: "Find the perfect solution for your needs.", href: "/products" },
-  { title: "About Us", description: "Meet and learn about our dedication", href: "/about" },
-  // ... other menu items
-];
+// const navListMenuItems = [
+//   { title: "Products", description: "Find the perfect solution for your needs.", href: "/products" },
+//   { title: "About Us", description: "Meet and learn about our dedication", href: "/about" },
+//   // ... other menu items
+// ];
 
-function NavListMenu() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+// function NavListMenu() {
+//   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  return (
-    <div className="relative group">
-      <button 
-        onClick={() => setIsMenuOpen(!isMenuOpen)}
-        className="flex items-center gap-2 py-2 pr-4 font-medium text-gray-900"
-      >
-        Resources
-        <ChevronDownIcon className="w-4 h-4" />
-      </button>
-      {isMenuOpen && (
-        <div className="absolute z-10 w-screen max-w-md px-4 mt-3 transform -translate-x-1/2 left-1/2 sm:px-0 lg:max-w-3xl">
-          <div className="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
-            <div className="relative grid gap-8 bg-white p-7 lg:grid-cols-2">
-              {navListMenuItems.map((item, index) => (
-                <Link
-                  key={index}
-                  href={item.href}
-                  className="flex items-center p-2 -m-3 transition duration-150 ease-in-out rounded-lg hover:bg-gray-50"
-                >
-                  <div className="ml-4">
-                    <p className="text-sm font-medium text-gray-900">{item.title}</p>
-                    <p className="text-sm text-gray-500">{item.description}</p>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </div>
-      )}
-    </div>
-  );
-}
+//   return (
+//     <div className="relative group">
+//       <button 
+//         onClick={() => setIsMenuOpen(!isMenuOpen)}
+//         className="flex items-center gap-2 py-2 pr-4 font-medium text-gray-900"
+//       >
+//         Resources
+//         <ChevronDownIcon className="w-4 h-4" />
+//       </button>
+//       {isMenuOpen && (
+//         <div className="absolute z-10 w-screen max-w-md px-4 mt-3 transform -translate-x-1/2 left-1/2 sm:px-0 lg:max-w-3xl">
+//           <div className="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
+//             <div className="relative grid gap-8 bg-white p-7 lg:grid-cols-2">
+//               {navListMenuItems.map((item, index) => (
+//                 <Link
+//                   key={index}
+//                   href={item.href}
+//                   className="flex items-center p-2 -m-3 transition duration-150 ease-in-out rounded-lg hover:bg-gray-50"
+//                 >
+//                   <div className="ml-4">
+//                     <p className="text-sm font-medium text-gray-900">{item.title}</p>
+//                     <p className="text-sm text-gray-500">{item.description}</p>
+//                   </div>
+//                 </Link>
+//               ))}
+//             </div>
+//           </div>
+//         </div>
+//       )}
+//     </div>
+//   );
+// }
 
 export default function NavbarWithMegaMenu() {
   const [openNav, setOpenNav] = useState(false);
@@ -61,7 +61,7 @@ export default function NavbarWithMegaMenu() {
           <div className="flex">
             <div className="flex-shrink-0 flex items-center">
               <Link href="/userdashboard">
-              <span className="text-xl font-bold">CODEWITHME</span>
+              <span className="text-xl font-bold text-blue-500">CODEWITHME</span>
               </Link>
             </div>
         
@@ -71,7 +71,7 @@ export default function NavbarWithMegaMenu() {
               Log In
             </Link>
             <Link href="/register" className="bg-blue-500 text-white px-3 py-2 rounded-md text-sm font-medium">
-              Sign In
+              Sign Up 
             </Link>
           </div>
           <div className="-mr-2 flex items-center sm:hidden">

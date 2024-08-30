@@ -1,3 +1,4 @@
+
 import React from 'react';
 
 const StatsCard = ({ value, description }) => (
@@ -29,7 +30,7 @@ const StatsCard = ({ value, description }) => (
 
 const Page = () => {
   return (
-    <div className=" p-4 grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3">
+    <div className="bg-blue-500 p-4 grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3">
       <StatsCard value="2680" description="Put The Client First" />
       <StatsCard value="2680" description="Put The Client First" />
       <StatsCard value="2680" description="Put The Client First" />

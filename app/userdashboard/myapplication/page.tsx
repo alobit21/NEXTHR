@@ -1,59 +1,122 @@
-// components/ApplicationTable.js
-import React from 'react';
+'use client'
+import React, { useState } from 'react';
+import { FaEdit } from 'react-icons/fa';
 
-const applications = [
-  {
-    ApplicationID: 'A001',
-    ApplicationDate: '2024-08-01',
-    ApplicationPosition: 'Frontend Developer',
-    Status: 'Pending',
-  },
-  {
-    ApplicationID: 'A002',
-    ApplicationDate: '2024-08-15',
-    ApplicationPosition: 'Backend Developer',
-    Status: 'Approved',
-  },
-  // Add more data as needed
-];
+const Page = () => {
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [currentUsername, setCurrentUsername] = useState('');
+  const [feedback, setFeedback] = useState('');
 
-const ApplicationTable = () => {
+  const openModal = (username: string) => {
+    setCurrentUsername(username);
+    setModalIsOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalIsOpen(false);
+    setFeedback('');
+  };
+
+  const handleFeedbackChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setFeedback(event.target.value);
+  };
+
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    // Handle the feedback submission logic here
+    console.log('Feedback submitted:', feedback);
+    closeModal();
+  };
+
   return (
-    <div className="overflow-x-auto">
-      <table className="table w-full border-separate border-spacing-0 border border-gray-300">
-        <thead>
-          <tr className="bg-gray-100 border-b border-gray-300">
-            <th className="px-4 py-2">ApplicationID</th>
-            <th className="px-4 py-2">ApplicationDate</th>
-            <th className="px-4 py-2">ApplicationPosition</th>
-            <th className="px-4 py-2">Status</th>
-          </tr>
-        </thead>
-        <tbody>
-          {applications.map((app, index) => (
-            <tr key={index} className="border-b border-gray-300">
-              <td className="px-4 py-2">{app.ApplicationID}</td>
-              <td className="px-4 py-2">{app.ApplicationDate}</td>
-              <td className="px-4 py-2">{app.ApplicationPosition}</td>
-              <td className="px-4 py-2">
-                <span
-                  className={`badge ${
-                    app.Status === 'Approved'
-                      ? 'badge-success'
-                      : app.Status === 'Pending'
-                      ? 'badge-warning'
-                      : 'badge-error'
-                  }`}
-                >
-                  {app.Status}
-                </span>
+    <div className="p-4 text-black">
+      <div className="overflow-x-auto">
+        <table className="table w-full min-w-full">
+          {/* head */}
+          <thead className='text-black text-xl'>
+            <tr>
+              <th>Username</th>
+              <th>Application Category</th>
+              <th>Date</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {/* row 1 */}
+            <tr>
+              <td>Cy Ganderton</td>
+              <td>Quality Control Specialist</td>
+              <td>2024-08-28</td>
+              <td>
+                <button onClick={() => openModal('Cy Ganderton')} className="btn btn-link p-0">
+                  <FaEdit className="text-blue-500 text-2xl hover:text-blue-700" />
+                </button>
               </td>
             </tr>
-          ))}
-        </tbody>
-      </table>
+            {/* row 2 */}
+            <tr>
+              <td>Hart Hagerty</td>
+              <td>Desktop Support Technician</td>
+              <td>2024-08-27</td>
+              <td>
+                <button onClick={() => openModal('Hart Hagerty')} className="btn btn-link p-0">
+                  <FaEdit className="text-blue-500 text-2xl hover:text-blue-700" />
+                </button>
+              </td>
+            </tr>
+            {/* row 3 */}
+            <tr>
+              <td>Brice Swyre</td>
+              <td>Tax Accountant</td>
+              <td>2024-08-26</td>
+              <td>
+                <button onClick={() => openModal('Brice Swyre')} className="btn btn-link p-0">
+                  <FaEdit className="text-blue-500 text-2xl hover:text-blue-700" />
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      {/* DaisyUI Modal */}
+      <input type="checkbox" id="my-modal" className="modal-toggle" checked={modalIsOpen} readOnly />
+      
+      <div className={`modal ${modalIsOpen ? 'modal-open' : ''}`}>
+        <div className="modal-box max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg mx-auto p-4">
+          <h2 className="text-lg font-bold mb-4">Edit Feedback for {currentUsername}</h2>
+          <form onSubmit={handleSubmit}>
+            <div className="form-control mb-4">
+              <label className="label">
+                <span className="label-text">Username:</span>
+              </label>
+              <input
+                type="text"
+                value={currentUsername}
+                readOnly
+                className="input input-bordered w-full"
+              />
+            </div>
+            <div className="form-control mb-4">
+              <label className="label">
+                <span className="label-text">Feedback:</span>
+              </label>
+              <textarea
+                value={feedback}
+                onChange={handleFeedbackChange}
+                className="textarea textarea-bordered w-full"
+                rows={4}
+              />
+            </div>
+            <div className="modal-action">
+              <button type="submit" className="btn btn-primary">Submit</button>
+              <label htmlFor="my-modal" className="btn" onClick={closeModal}>Close</label>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
   );
 };
 
-export default ApplicationTable;
+export default Page;

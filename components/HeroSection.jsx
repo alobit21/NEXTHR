@@ -7,14 +7,14 @@ const HeroSection = () => {
     return (
         <div>
             <section
-                className="backdrop-blur text-white"
-                style={{
-                    backgroundImage: `url('/assets/phone.PNG')`, // Path to your image
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                    height: '600px',
-					zIndex: -1 // Adjust height as needed
-                }}
+                className="backdrop-blur bg-black text-white"
+                // style={{
+                //     backgroundImage: `url('/assets/phone.PNG')`, // Path to your image
+                //     backgroundSize: 'cover',
+                //     backgroundPosition: 'center',
+                //     height: '600px',
+				// 	zIndex: -1 // Adjust height as needed
+                // }}
             >
                 <div className="container mx-auto backdrop-blur flex flex-col items-center px-4 py-16 text-center md:py-32 md:px-10 lg:px-32 xl:max-w-3xl">
                     <h1 className="text-4xl font-bold leading-none sm:text-5xl">

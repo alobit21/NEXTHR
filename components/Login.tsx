@@ -10,7 +10,7 @@ import {
    import Image from 'next/image'
   export default function SimpleRegistrationForm() {
     return (
-        <div className="flex flex-col md:flex-row w-full">
+        <div className="flex flex-col bg-white md:flex-row w-full">
             <div className="w-full md:w-1/2">
             <Image src={"/assets/manwithphone.PNG"} alt="Description" 
             width={300}

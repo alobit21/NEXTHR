@@ -19,7 +19,7 @@ export default function DashboardLayout({
         <Usernavbar/>
         <div className="flex">
         <Usersidebar />
-        <div className="flex-1 pl-24 bg-neutral ">{children}</div>
+        <div className="flex-1  bg-gray-400 ">{children}</div>
         </div>
       </body>
     </html>

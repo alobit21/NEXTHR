@@ -20,7 +20,7 @@ export default function AdminLayout({
         <Adminnavbar/>
       <div className="flex">
         <Adminsidebar />
-        <div className="flex-1 pl-4 bg-light-blue-500 pt-2">{children}</div>
+        <div className="flex-1 pl-4 bg-gray-400 pt-2">{children}</div>
       </div>
       </body>
     </html>

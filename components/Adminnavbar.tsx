@@ -3,15 +3,15 @@ import Link from "next/link";
 import React from "react";
 const Usernavbar = () => {
   return (
-    <div className="navbar hidden lg:block bg-base-300 border-solid border-2 border-indigo">
+    <div className="navbar bg-gray-600  border-solid border-2">
       <div className="flex-1">
-        <Link href="/admin" className="btn btn-ghost text-xl">
+        <Link href="/admin" className="btn btn-ghost text-white text-xl">
           ADMIN
         </Link>
       </div>
       <div className="flex-none">
         <div className="dropdown dropdown-end">
-          <div  role="button" className="btn btn-ghost btn-circle">
+          {/* <div  role="button" className="btn btn-ghost btn-circle">
             <div className="indicator">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -29,7 +29,7 @@ const Usernavbar = () => {
               </svg>
               <span className="badge badge-sm indicator-item">8</span>
             </div>
-          </div>
+          </div> */}
           <div
         
             className="card card-compact dropdown-content bg-base-100 z-[1] mt-3 w-52 shadow"
